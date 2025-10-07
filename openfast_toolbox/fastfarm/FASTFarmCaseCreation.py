@@ -723,7 +723,8 @@ class FFCaseCreation:
                             src = os.path.join('..', self.controllerInputfilename)
                             dst = os.path.join(self.condDirList[cond], self.caseDirList[case], f'Seed_{seed}', self.controllerInputfilename)
                             if writeFiles:
-                                os.symlink(src, dst)                
+                                os.symlink(src, dst)   
+                                # shutil.copy2(src, dst)
                         except FileExistsError:
                             pass
                     os.chdir(notepath)
